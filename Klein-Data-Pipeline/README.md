@@ -49,7 +49,6 @@ The pipeline consists of the following steps:
 - **Libraries**:
   - `pandas`: Data manipulation and CSV generation.
   - `firebase-admin`: Interacting with Firebase Auth and Realtime Database.
-  - `mysql-connector-python`: Uploading data to MySQL.
 - **Firebase**: Source of raw data (Auth and Realtime Database).
 - **MySQL**: Relational database for storing processed data.
 - **Git/GitHub**: Version control and project hosting.
@@ -84,6 +83,7 @@ KleinDataPipeline/
 
 3. **Upload to MySQL**:
    - No automation here yet. Simple table creation in mySQL.
+   - Want to use `mysql-connector-python` in the future.
 
 ## Challenges and Solutions
 
