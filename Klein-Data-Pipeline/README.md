@@ -53,12 +53,13 @@ The pipeline consists of the following steps:
 - **MySQL**: Relational database for storing processed data.
 - **Git/GitHub**: Version control and project hosting.
 
-## Project Files
+## How to View the Code
 
-
-
-
-**Note**: The `data/` folder (containing raw and processed data) and `config/firebase_admin_key.json` (containing sensitive credentials) are excluded from this repository for security reasons.
+The scripts are organized in the `scripts/` folder and the root directory. Key files to review:
+- [`scripts/fetch_auth_data.py`](scripts/fetch_auth_data.py): Fetches user authentication data from Firebase Auth.
+- [`scripts/fetch_firebase_data.py`](scripts/fetch_firebase_data.py): Retrieves user profile data from Firebase Realtime Database.
+- [`scripts/process_raw_to_csv.py`](scripts/process_raw_to_csv.py): Showcases data cleaning, transformation, and error handling.
+- [`run_pipeline.py`](run_pipeline.py): Demonstrates automation and integration of the entire pipeline.
 
 ## How It Works
 
