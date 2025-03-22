@@ -1,5 +1,5 @@
-# Hunter Kleinschmidts's Analytics Portfolio
-Hi, I’m Hunter Kleinschmidt, a data analyst exploring user behavior for the Klein Training App with SQL, Python, R, and Tableau. Check out my projects below and my visualizations on [Tableau Public](insert-link-when-ready).
+# Hunter Kleinschmidt's Analytics Portfolio
+Hi, I’m Hunter Kleinschmidt, a data analyst exploring user behavior for the Klein Training App with SQL, Python, R, and Tableau. Check out my projects below and my visualizations on Tableau Public (coming soon).
 
 ## Projects
 - **[Klein Training MyGym Preferences]** - Analyzed equipment choices to prioritize workout content. [Details](Klein-MyGym-Preferences)
