@@ -54,16 +54,8 @@ The pipeline consists of the following steps:
 - **Git/GitHub**: Version control and project hosting.
 
 ## Project Files
-KleinDataPipeline/
-├── scripts/
-│   ├── fetch_auth_data.py        # Fetches Firebase Auth data
-│   ├── fetch_firebase_data.py    # Fetches Firebase Realtime Database JSON
-│   └── process_raw_to_csv.py     # Processes JSON and auth data into CSVs
-├── run_pipeline.py               # Runs the full pipeline
-├── upload_to_mysql.py            # Optional: Uploads CSVs to MySQL
-├── requirements.txt              # Python dependencies
-├── .gitignore                    # Git ignore file
-└── README.md                     # Project documentation
+
+
 
 
 **Note**: The `data/` folder (containing raw and processed data) and `config/firebase_admin_key.json` (containing sensitive credentials) are excluded from this repository for security reasons.
