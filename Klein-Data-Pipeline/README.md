@@ -7,7 +7,7 @@ This project demonstrates an end-to-end data pipeline I built to transform raw F
 ## Skills Demonstrated
 
 - **Data Engineering**: Designed and implemented a pipeline to extract, transform, and load (ETL) data from Firebase to MySQL.
-- **Python Programming**: Wrote modular scripts using `pandas` for data processing, `firebase-admin` for API integration, and `mysql-connector-python` for database operations.
+- **Python Programming**: Wrote modular scripts using `pandas` for data processing and `firebase-admin` for API integration.
 - **Database Management**: Structured data into a relational model in MySQL, optimizing for querying and analysis.
 - **Error Handling and Debugging**: Added debug statements and robust error handling to ensure pipeline reliability.
 - **Automation**: Automated the entire process with a single `run_pipeline.py` script, improving efficiency.
