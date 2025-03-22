@@ -55,11 +55,11 @@ The pipeline consists of the following steps:
 
 ## How to View the Code
 
-The scripts are organized in the `scripts/` folder and the root directory. Key files to review:
-- [`fetch_auth_data.py`](https://github.com/HunterKleinschmidt/KleinDataPipeline/main/scripts/fetch_auth_data.py): Fetches user authentication data from Firebase Auth.
-- [`fetch_firebase_data.py`](https://github.com/HunterKleinschmidt/KleinDataPipeline/main/scripts/fetch_firebase_data.py): Retrieves user profile data from Firebase Realtime Database.
-- [`process_raw_to_csv.py`](https://github.com/HunterKleinschmidt/KleinDataPipeline/main/scripts/process_raw_to_csv.py): Showcases data cleaning, transformation, and error handling.
-- [`run_pipeline.py`](https://github.com/HunterKleinschmidt/KleinDataPipeline/main/run_pipeline.py): Demonstrates automation and integration of the entire pipeline.
+The scripts are organized in the `Scripts/` folder and the root directory. Key files to review:
+- [`fetch_auth_data.py`](https://github.com/HunterKleinschmidt/KleinDataPipeline/blob/main/Scripts/fetch_auth_data.py): Fetches user authentication data from Firebase Auth.
+- [`fetch_firebase_data.py`](https://github.com/HunterKleinschmidt/KleinDataPipeline/blob/main/Scripts/fetch_firebase_data.py): Retrieves user profile data from Firebase Realtime Database.
+- [`process_raw_to_csv.py`](https://github.com/HunterKleinschmidt/KleinDataPipeline/blob/main/Scripts/process_raw_to_csv.py): Showcases data cleaning, transformation, and error handling.
+- [`run_pipeline.py`](https://github.com/HunterKleinschmidt/KleinDataPipeline/blob/main/run_pipeline.py): Demonstrates automation and integration of the entire pipeline.
 
 ## How It Works
 
