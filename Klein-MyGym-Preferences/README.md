@@ -9,7 +9,7 @@ This project analyzes user equipment selections in the MyGym feature to help pri
 ## Overview
 
 1. **Data Fetching**  
-   - **[`[fetch_firebase_data.py](https://github.com/HunterKleinschmidt/HK-Analytics-Portfolio/blob/main/Klein-Data-Pipeline/Scripts/fetch_firebase_data.py)`](Scripts/fetch_firebase_data.py)** Fetches raw JSON data from Firebase.  
+   - **[`[fetch_firebase_data.py](https://github.com/HunterKleinschmidt/HK-Analytics-Portfolio/blob/main/Klein-Data-Pipeline/Scripts/fetch_firebase_data.py)](https://github.com/HunterKleinschmidt/HK-Analytics-Portfolio/blob/main/Klein-Data-Pipeline/Scripts/fetch_firebase_data.py)`](Scripts/fetch_firebase_data.py)** Fetches raw JSON data from Firebase.  
    - **[`fetch_auth_data.py`](Scripts/fetch_auth_data.py)**  
      Retrieves authentication data (user emails, creation dates, etc.) and saves it as CSV.
 
