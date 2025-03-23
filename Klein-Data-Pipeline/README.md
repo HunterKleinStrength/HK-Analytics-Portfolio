@@ -101,7 +101,7 @@ The scripts are organized in the `scripts/` folder and the root directory. Key f
 
 ## Contact
 
-For inquiries or to discuss this project further, please reach out via [LinkedIn](https://www.linkedin.com/in/yourprofile) or email at [your.email@example.com].
+For inquiries or to discuss this project further, please reach out via [LinkedIn](https://www.linkedin.com/in/yourprofile) or email at hunter@kleinstrength.com.
 
 ---
 
