@@ -1,5 +1,6 @@
 """
-Processes raw Firebase JSON and auth data into structured CSVs.
+-- Processes raw Firebase JSON and auth data into structured CSVs. A LOT of work has gone into this file. Mainly identifying problem in backend data collection and finding
+python oriented solutions to clean up the pipeline.
 """
 
 import sys
@@ -326,4 +327,41 @@ try:
     print("Saved: data/processed/my_gym.csv")
 except PermissionError as e:
     print(f"ERROR: Permission denied when writing to data/processed/my_gym.csv: {e}")
+    sys.exit(1)
+
+# New Section: Analyze the percentage of distinct users per equipment type
+print("\nAnalyzing equipment type preferences...")
+
+# Step 1: Split the 'translated' column into individual equipment types
+my_gym['equipment_types'] = my_gym['translated'].str.split(',')
+
+# Remove duplicates within each user's equipment list
+my_gym['equipment_types'] = my_gym['equipment_types'].apply(lambda x: list(dict.fromkeys(x)) if isinstance(x, list) else x)
+
+# Explode the 'equipment_types' column to create a row for each equipment type
+equipment_df = my_gym.explode('equipment_types')
+
+# Reset the index and clean up
+equipment_df = equipment_df.reset_index(drop=True)
+equipment_df['equipment_types'] = equipment_df['equipment_types'].str.strip()
+equipment_df = equipment_df.rename(columns={'equipment_types': 'equipment_type'})
+
+# Step 2: Calculate the percentage of distinct users per equipment type
+equipment_counts = equipment_df.groupby('equipment_type')['user_id'].nunique().reset_index()
+equipment_counts = equipment_counts.rename(columns={'user_id': 'user_count'})
+total_users = my_gym['user_id'].nunique()
+equipment_counts['percentage'] = (equipment_counts['user_count'] / total_users * 100).round(1)
+equipment_counts = equipment_counts.sort_values(by='user_count', ascending=False)
+
+# Display the result
+print(f"Total number of distinct users in my_gym: {total_users}")
+print("\nPercentage of distinct users who selected each equipment type:")
+print(equipment_counts)
+
+# Save the equipment type analysis to a CSV file
+try:
+    equipment_counts.to_csv('data/processed/equipment_type_percentages.csv', index=False)
+    print("Saved: data/processed/equipment_type_percentages.csv")
+except PermissionError as e:
+    print(f"ERROR: Permission denied when writing to data/processed/equipment_type_percentages.csv: {e}")
     sys.exit(1)
