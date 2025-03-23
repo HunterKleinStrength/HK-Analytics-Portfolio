@@ -12,4 +12,4 @@ Check out my projects below, along with my visualizations on Tableau Public (com
 ## Contact
 **Email**: hunter@kleinstrength.com  
 **LinkedIn**: https://www.linkedin.com/in/hunter-klein/  
-**Tableau Public**: coming soon
+**Tableau Public**: [My Vizzes](https://public.tableau.com/app/profile/hunter.kleinschmidt/vizzes)
