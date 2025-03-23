@@ -92,4 +92,115 @@ for i in userIDs:
                 i, 
                 y.get('purchase_date_ms'), 
                 y.get('expires_date_ms'), 
-                y.get('
+                y.get('original_purchase_date_ms'), 
+                y.get('product_id'), 
+                num_transactions
+            ]
+
+# Save the subscriptions data
+subscriptions.to_csv('data/processed/subscriptions.csv', index=False)
+print("Saved: data/processed/subscriptions.csv")
+print(f"Total invalid transactions skipped: {total_invalid_transactions}")
+
+# Process user profiles: Extract user info
+user_profiles = pd.DataFrame(columns=[
+    'user_id', 'email', 'country', 'city', 'height', 'weight', 'gender', 'age', 'active', 'level'
+])
+for user_id in userIDs:
+    if 'userInfo' not in data[user_id]:
+        continue
+    user_info = data[user_id]['userInfo']
+    if is_flagged(user_id, user_info):
+        continue
+    user_profiles.loc[len(user_profiles)] = [
+        user_id,
+        user_info.get('email'),
+        user_info.get('country'),
+        user_info.get('city'),
+        user_info.get('height'),
+        user_info.get('weight'),
+        user_info.get('gender'),
+        user_info.get('age'),
+        user_info.get('active'),
+        user_info.get('level')
+    ]
+
+# Save the user profiles data
+user_profiles.to_csv('data/processed/user_profiles.csv', index=False)
+print("Saved: data/processed/user_profiles.csv")
+
+# Define preference mapping for my_gym
+preference_mapping = {
+    'DA': 'Dumbbells',
+    'K': 'Kettlebells',
+    'KA': 'Kettlebells',
+    'B': 'Barbell & Plates',
+    'C': 'Cable Machines',
+    'J': 'Boxes',
+    'M': 'Med Ball',
+    'S': 'Swiss Ball',
+    'R': 'Bands',
+    'N': 'Bodyweight',
+    'HB': 'Hexbar',
+    'H': 'Hexbar',
+    'X': 'Back Extension Machine',
+    'Y': 'Assault Bike',
+    'P': 'Weighted Plate',
+    'D': 'Dumbbells'
+}
+
+# Process my_gym preferences
+my_gym = pd.DataFrame(columns=['user_id', 'creation_date', 'preferences', 'translated'])
+for user_id in userIDs:
+    if 'userInfo' not in data[user_id]:
+        continue
+    user_info = data[user_id]['userInfo']
+    if is_flagged(user_id, user_info):
+        continue
+    creation_date = auth_data[auth_data['user_id'] == user_id]['creation_date'].iloc[0] if user_id in auth_data['user_id'].values else None
+    if 'myGymPreferences' in user_info:
+        preferences = user_info['myGymPreferences']
+        pref_list = []
+        
+        # Step 1: Extract the preferences into a list
+        if isinstance(preferences, list):
+            pref_list = preferences
+        elif isinstance(preferences, str):
+            pref_list = [pref.strip() for pref in preferences.split(',')]
+        
+        # Step 2: Deduplicate preferences
+        # - Replace 'D' with 'DA' (both are Dumbbells)
+        # - Replace 'KA' with 'K' (both are Kettlebells)
+        # - Use a set to ensure no duplicates while preserving order
+        deduped_prefs = []
+        seen = set()
+        for pref in pref_list:
+            # Standardize Dumbbells: 'D' -> 'DA'
+            if pref == 'D':
+                pref = 'DA'
+            # Standardize Kettlebells: 'KA' -> 'K'
+            if pref == 'KA':
+                pref = 'K'
+            # Only add if not already seen
+            if pref not in seen:
+                seen.add(pref)
+                deduped_prefs.append(pref)
+        
+        # Step 3: Translate the deduplicated preferences
+        translated_list = [preference_mapping.get(pref, '') for pref in deduped_prefs]
+        
+        # Step 4: Join the preferences and translated values into comma-separated strings
+        preferences_str = ','.join(deduped_prefs)
+        translated_str = ','.join(translated_list)
+        
+        # Step 5: Add a single row for the user
+        my_gym.loc[len(my_gym)] = [
+            user_id,
+            creation_date,
+            preferences_str,
+            translated_str
+        ]
+
+# Save the my_gym data
+my_gym.to_csv('data/processed/my_gym.csv', index=False)
+print("Saved: data/processed/my_gym.csv")
