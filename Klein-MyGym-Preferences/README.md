@@ -1,21 +1,14 @@
 # Klein Training MyGym Preferences
 
-**Excuse the mess.** A lot of learning happened during this process, and it taught us the cost of not building scalable data pipelines from day one.
+Excuse the mess. A lot of learning happened during this process, and it taught us the cost of not building scalable data pipelines from day one.
 
 This project analyzes user equipment selections in the MyGym feature to help prioritize workout content for the Klein Training App. The main goal is to identify the top equipment (e.g., dumbbells, kettlebells) so the strength and conditioning department can better allocate resources.
 
 ---
 
-# Klein Training MyGym Preferences
-
-This project analyzes user equipment selections in the MyGym feature to help prioritize workout content for the Klein Training App. The analysis identifies top equipment (such as dumbbells and kettlebells) to guide resource allocation for the strength and conditioning department.
-
----
-
 ## SQL Analysis
 
-The primary SQL file for this analysis is [mygym_analysis_view.sql](mygym_analysis_view.sql). This script creates a view using a recursive CTE to:
-
+The primary SQL file for this analysis is `mygym_analysis_view.sql`. This script creates a view using a recursive CTE to:
 - Split comma-separated equipment values in the `translated` column into individual items.
 - Count the distinct number of users per equipment type.
 - Calculate the percentage of users for each equipment relative to the total in the `my_gym` table.
@@ -57,11 +50,9 @@ SELECT
     (SELECT COUNT(0) FROM `my_gym`) AS `total_users`
 FROM `split_translated`
 GROUP BY `split_translated`.`equipment`;
+```
+## Visualization
 
-
-**Visualization**  
-   - **Tableau Dashboard**  
-     I used Tableau to build an interactive dashboard for the final equipment analysis.  
-     **Link:**  
-     https://public.tableau.com/views/EquipmentPreferencesandExerciseAvailabilityAnalysis/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+I used Tableau to build an interactive dashboard for the final equipment analysis.
+Tableau Dashboard: [Dashboard Link](https://public.tableau.com/app/profile/hunter.kleinschmidt/viz/EquipmentPreferencesandExerciseAvailabilityAnalysis/Dashboard1)
 
