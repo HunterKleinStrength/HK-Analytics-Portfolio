@@ -4,10 +4,10 @@ Hi, I’m Hunter Kleinschmidt, but I prefer to go by Hunter Klein. This is a col
 Check out my projects below, along with my visualizations on Tableau Public (coming soon).
 
 ## Projects
-[Klein Training MyGym Preferences] - Analyzed equipment choices to prioritize workout content. *[Details](https://github.com/HunterKleinschmidt/HK-Analytics-Portfolio/tree/main/Klein-MyGym-Preferences)*
-[Klein Training Onboarding] - Reduced bounce rates with onboarding updates. *Details*  
-[Klein Training Organic Growth] - Identified organic user sources. *Details*  
-[Klein Data Pipeline] - Built a pipeline to fetch and process Firebase data into CSVs using Python. *[Details](https://github.com/HunterKleinschmidt/HK-Analytics-Portfolio/tree/main/Klein-Data-Pipeline)*
+- **[Klein Training MyGym Preferences]** - Analyzed equipment choices to prioritize workout content. *[Details](https://github.com/HunterKleinschmidt/HK-Analytics-Portfolio/tree/main/Klein-MyGym-Preferences)*
+- **[Klein Training Onboarding]** - Reduced bounce rates with onboarding updates. *[Details](#)*
+- **[Klein Training Organic Growth]** - Identified organic user sources. *[Details](#)*
+- **[Klein Data Pipeline]** - Built a pipeline to fetch and process Firebase data into CSVs using Python. *[Details](https://github.com/HunterKleinschmidt/HK-Analytics-Portfolio/tree/main/Klein-Data-Pipeline)*
 
 ## Contact
 **Email**: hunter@kleinstrength.com  
