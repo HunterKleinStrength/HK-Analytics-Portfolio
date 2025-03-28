@@ -5,7 +5,7 @@
 Build a tool for non-analytically inclined team members, primarily marketing, enabling them to pool monthly cohort data at any time.
 
 **Version:** 1.0  
-**Date:** [Insert Date]  
+**Date:** 06-05-2024  
 **Prepared by:** Hunter Kleinschmidt, Lead Data Analyst / Project Manager  
 **Prepared for:** Klein Training
 
