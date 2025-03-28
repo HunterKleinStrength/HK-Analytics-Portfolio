@@ -111,7 +111,7 @@ This project involves developing a web-based tool designed to automate cohort an
   - Collaborate in creating visualizations and documentation.
 
 - **Acknowledgments:**  
-  Preliminary versions of the data extraction and processing scripts were originally developed by Charles and Kareem. Their foundational work was instrumental in accelerating the initial setup of this project.
+  Preliminary versions of the data extraction and processing scripts were originally developed by Charles, Kareem, anmd Hunter. Their foundational work was instrumental in accelerating the initial setup of this project.
 
 ---
 
