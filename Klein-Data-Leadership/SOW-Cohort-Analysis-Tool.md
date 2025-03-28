@@ -42,7 +42,7 @@ This project involves developing a web-based tool designed to automate cohort an
 ## 3. Objectives
 
 - Automate the reporting process for user cohorts.
-- Enhance data-driven decision making by providing clear, actionable insights.
+- Enhance data-driven decision making by providing clear, actionable marketing and proeduct insights.
 - Improve internal data workflows and reduce manual reporting efforts.
 - Develop a scalable tool that accommodates analyses for different dates and sports parameters.
 
