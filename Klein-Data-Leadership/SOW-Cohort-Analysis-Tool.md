@@ -7,7 +7,7 @@ Build a tool for non-analytically inclined team members, primarily marketing, en
 **Version:** 1.0  
 **Date:** 06-05-2024  
 **Prepared by:** Hunter Kleinschmidt, Lead Data Analyst / Project Manager  
-**Prepared for:** Klein Training
+**Prepared for:** Klein Training App
 
 ---
 
